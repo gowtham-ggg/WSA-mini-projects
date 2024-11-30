@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Management</title>
+</head>
+<body>
+    <h2>Manage Dropdown List</h2>
+    
+    <label for="states">Select State:</label>
+    <select id="state" name="states">
+        <option value="TamilNadu">Tamil Nadu</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Telangana">Telangana</option>
+        <option value="UP">Uttar Pradesh</option>
+    </select>
+
+    <br><br>
+    <button onclick="countItems()">Count Items</button>
+    <button onclick="deleteItem()">Remove Selected Item</button>
+
+    <p id="result"></p>
+
+    <script>
+        const stateList = document.getElementById("state");
+
+        function countItems() {
+            const listLength = stateList.options.length; 
+            window.alert("Number of items in the list: " + listLength);
+        }
+
+        function deleteItem() {
+            const selectedIndex = stateList.selectedIndex; 
+
+            if (selectedIndex !== -1) {
+                const removedItem = stateList.options[selectedIndex].text;
+                stateList.remove(selectedIndex); 
+
+                document.getElementById("result").innerText =
+                    `Removed: ${removedItem}`;
+            } 
+        }
+    </script>
+</body>
+</html>

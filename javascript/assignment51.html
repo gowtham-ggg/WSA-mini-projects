@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Name Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .name-display {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display Name Every 30 Seconds</h1>
+    <p id="nameDisplay" class="name-display">Waiting to display the name...</p>
+
+    <script>
+
+        const userName = prompt("Enter your Name: ");
+
+        function displayName() {
+            const nameDisplayElement = document.getElementById("nameDisplay");
+            nameDisplayElement.innerText = `Hello, ${userName}`;
+        }
+        setInterval(displayName, 30000);
+        displayName();
+    </script>
+</body>
+</html>

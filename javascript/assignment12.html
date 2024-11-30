@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Message</title>
+    <style>
+        /* Reset body styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        /* Center container */
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        /* Heading style */
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Input field style */
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Result display style */
+        #display {
+            background-color: #e9e9e9;
+            font-weight: bold;
+        }
+
+        /* Button style */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="display" placeholder="Welcome Message!" readonly><br>
+    <input type="number" id="input" placeholder="Enter time between 1 - 24"><br>
+    <button id="button">Get Message</button>
+    </div>
+    <script>
+
+        const display = document.getElementById("display");
+        const button = document.getElementById("button");
+
+
+        button.addEventListener("click", ()=>{
+        const userInput = Number(document.getElementById("input").value);
+       if(userInput >=1 && userInput < 12){
+            display.value = "Good morning!";
+            display.style.color = "green";
+        }
+        else if(userInput >= 12 && userInput < 16){
+            display.value = "Good Noon!";
+            display.style.color = "purple";
+        }
+        else if(userInput >= 16  && userInput < 19){
+            display.value = "Good Evening!";
+            display.style.color = "blue";
+        }
+        else if(userInput >= 19  && userInput <= 24){
+            display.value ="Good Night!";
+            display.style.color = "orangered";
+        }
+        else{
+            display.value = "Please enter number between 1 - 24!";
+            display.style.color = "red";
+        }
+        });
+        
+    </script>
+</body>
+</html>

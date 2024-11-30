@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove specified Characters</title>
+</head>
+<body>
+    <script>
+        function removeChar(str, position, numChar){
+    return str.slice(0,position) + str.slice(position + numChar);
+}
+document.write(removeChar("Hi are you?", 2, 3) + "<br>");
+document.write(removeChar("Welcome", 0, 2));
+    </script>
+    
+</body>
+</html>

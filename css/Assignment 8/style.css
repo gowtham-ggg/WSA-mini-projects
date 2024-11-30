@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: white;
+    color: #fff;
+    padding: 20px;
+}
+
+.timeline-container {
+    background-color: #111;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    
+}
+
+.timeline-header {
+    text-align: center;
+    background-color: white;
+    border: 2px dashed red;
+    border-radius: 10px;
+    width: 50%;
+    padding-bottom: 20px;
+    position: relative;
+    bottom: 40px;
+    transform: translateX(50%);
+
+} 
+
+.timeline-header h2 {
+    font-size: 32px;
+    background-color: #000;
+    padding: 15px;
+    display: inline-block;
+    
+}
+
+.timeline {
+    position: relative;
+    padding: 50px 0; 
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #ff3399;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 1;
+    transform:translateY(-4%);
+}
+
+.timeline-event {
+    width: 50%;
+    position: relative;
+    padding: 10px 40px;
+    box-sizing: border-box;
+}
+
+.timeline-event.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-event.right {
+    left: 50%;
+}
+
+.timeline-event .content {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ff3399;
+    margin-top: 20px; 
+    width: 300px;
+}
+
+.year-container {
+    width: 80px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    border: 1px solid #ff3399;
+    border-radius: 5px;
+    z-index: 2;
+} 
+
+.year-left{
+    position: relative;
+    transform: translateX(440%);
+}
+.year-right{
+    position: relative;
+    transform: translateX(-100%);
+} 
+
+.content-right{
+    text-align: right;
+}
+.content-left{
+    text-align: left;
+}
+
+.arrow-symb{
+   
+}
+.arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+.fa-solid{
+    color: #ff3399;
+}

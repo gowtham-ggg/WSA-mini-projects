@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factors of Positive Integer</title>
+    <style>
+        /* Basic styling for body */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container styling */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        /* Styling input fields */
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Styling button */
+        #button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Button hover effect */
+        #button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="input" placeholder="Enter a positive integer">
+        <input type="text" id="display" placeholder="Factors will be displayed here" readonly>
+        <button id="button">Find Factors</button>
+    </div>
+
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            const input = document.getElementById("input").value;
+            const display = document.getElementById("display");
+
+            function findFactors(num) {
+                let facts = [];
+                for (let i = 1; i <= num; i++) { // Start from 1 to avoid division by zero
+                    if (num % i === 0) {
+                        facts.push(i);
+                    }
+                }
+                return facts;
+            }
+
+            // Display factors in comma-separated format
+            display.value = findFactors(input).join(", ");
+            display.style.color = "green";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find date</title>
+</head>
+<body>
+    <script>
+        function findDate(str){
+            const date = /\b(\d{1,2}[/-]\d{1,2}[/-]\d{4})\b/g;
+
+            const matches = str.match(date);
+
+            if(matches){
+                document.write("Dates in the strings are : "+ matches.join("<br>")+ "<br>");
+            }
+            else{
+                document.write("No dates in string ");
+            }
+        }
+        findDate("04-05-2018 is the date today and tomorrow is 05/05/2018" );
+        findDate("hi today is 4/05/2018");
+    </script>
+</body>
+</html>

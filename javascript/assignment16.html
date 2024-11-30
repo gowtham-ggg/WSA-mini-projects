@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong number</title>
+</head>
+<body>
+    <div id="container">
+        <p>"The 3 digit numbers  between (100 to 999) :"</p>
+        <ul id="display"></ul>
+    </div>
+    <script>
+       function isArmstrong(number){
+        let sum = 0;
+        let temp = number;
+
+        while(temp > 0){
+            let digit = temp%10;
+            sum+= digit **3;
+            temp = Math.floor(temp/10);
+        }
+        return sum === number;
+       } 
+    
+       for (let num = 100; num < 1000; num++) {  // Loop through numbers from 100 to 999 (three-digit numbers)
+    if (isArmstrong(num)) {  // Call `isArmstrong` to check if `num` is an Armstrong number
+        let listItem = document.createElement("li");
+        listItem.textContent = num;
+        document.getElementById("display").appendChild(listItem);
+    }
+}
+    </script>
+</body>
+</html>

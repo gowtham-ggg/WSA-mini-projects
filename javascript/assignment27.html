@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scramble Word</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f5;
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="text"]:read-only {
+            background-color: #e9ecef;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="display" placeholder="OLLEH" readonly>
+        <input type="text" id="input" placeholder="HELLO">
+        <input type="text" id="order" placeholder="3,4,2,1,0">
+        <button id="button">Scramble</button>
+    </div>
+
+    <script>
+        const button = document.getElementById("button");
+
+        button.addEventListener("click", () => {
+            const display = document.getElementById("display");
+            const word = document.getElementById("input").value;
+            const orderInput = document.getElementById("order").value;
+
+            const position = orderInput.split(',').map(Number);
+
+            function scrambledWord(word, position) {
+                const scramble = new Array(word.length);
+                for (let i = 0; i < position.length; i++) {
+                    scramble[i] = word[position[i]];
+                }
+                return scramble.join('');
+            }
+
+            display.value = scrambledWord(word, position);
+        });
+    </script>
+</body>
+</html>

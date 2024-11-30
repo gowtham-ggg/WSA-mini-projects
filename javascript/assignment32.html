@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpperCase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 500px;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[readonly] {
+            background-color: #f0f0f0;
+        }
+        button {
+            width: 50%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #display{
+            padding: 30px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="input" placeholder="ex: hello everyone...">
+        <input type="text" id="display" placeholder="Output..." readonly>
+        <button id="button">Convert</button>
+    </div>
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            const input = document.getElementById("input").value;
+            const display = document.getElementById("display");
+
+            function convertUpperCase(str) {
+                let words = str.split(" ");
+                return words.map(word => {
+                    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                }).join(" ");
+            }
+
+            const result = convertUpperCase(input);
+            display.value = result; 
+            display.style.color ="red";
+        });
+    </script>
+</body>
+</html>

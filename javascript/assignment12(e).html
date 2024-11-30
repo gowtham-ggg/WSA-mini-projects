@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIM Game</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Body Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f4f8;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Heading */
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Input Styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        input[readonly] {
+            color: #555;
+            background-color: #eef2f5;
+        }
+
+        /* Button Styling */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 15px;
+        }
+        #display{
+            padding: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Paragraph Styling */
+        p {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NIM Game</h1>
+        <input type="text" id="display" placeholder="Win/Loss" readonly>
+        <input type="text" id="input" placeholder="Random Num" readonly>
+        <button id="button">Scroll</button>
+        <p>Press the scroll button to start the game</p>
+    </div>
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            const display = document.getElementById("display");
+            const input = document.getElementById("input");
+
+            let userInput = Math.floor(Math.random() * 100) + 1;
+            if (userInput % 4 !== 0) {
+                input.value = userInput;
+                display.value = "You won!!!";
+                display.style.color = "white";
+                display.style.backgroundColor = "green";
+            } else {
+                input.value = userInput;
+                display.value = "Computer won!!!";
+                display.style.color = "white";
+                display.style.backgroundColor = "red";
+            }
+        });
+    </script>
+</body>
+</html>

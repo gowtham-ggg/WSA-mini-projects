@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade</title>
+    <style>
+        body {
+            font-family: "Poppins";
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="number"], input[type="text"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #grade{
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #28a745;
+            padding: 20px;
+        }
+        .grades-info {
+            margin-top: 15px;
+            font-size: 9px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .grades-info p {
+            margin: 4px 0;
+        }
+        .grades-info strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grade according to average marks</h1>
+        <input type="text" id="grade" placeholder="Grade" readonly>
+        <input type="number" id="science" placeholder="Enter mark 1">
+        <input type="number" id="maths" placeholder="Enter mark 2">
+        <input type="number" id="computerScience" placeholder="Enter mark 3">
+        <button id="button">Get Grade</button>
+        <div class="grades-info">
+            <p>(<strong>Average</strong> : <strong>Grade</strong>)</p>
+            <p> (&gt; =90 : Ex) </p>
+            <p>(80-90 : A+) </p>
+            <p>(70-80 : A )</p>
+            <p>(60-70 : B+ )</p>
+            <p>(&lt;60 : Fail)</p>
+        </div>
+    </div>  
+    <script>
+        const showGrade = document.getElementById("grade");
+        const button = document.getElementById("button");
+
+        button.addEventListener("click", () => {
+            const science = parseFloat(document.getElementById("science").value);
+            const maths = parseFloat(document.getElementById("maths").value);
+            const computerScience = parseFloat(document.getElementById("computerScience").value);
+            let average = (science + maths + computerScience) / 3;
+
+            const grade = average >= 90 ? "Ex" :
+                          average >= 80 ? "A+" :
+                          average >= 70 ? "A" :
+                          average >= 60 ? "B+" :
+                          "FAIL";
+
+            showGrade.value = grade;
+        });
+    </script>
+</body>
+</html>

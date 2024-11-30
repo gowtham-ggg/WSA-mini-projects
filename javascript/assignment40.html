@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Doctor(docName, docExperience){
+            this.docName = docName;
+            this.docExperience = docExperience;
+        }
+
+        function Nurse(nurseName, nurseExperience){
+            this.nurseName = nurseName;
+            this.nurseExperience = nurseExperience;
+        }
+
+        Doctor.prototype.patientName = "William";
+        Nurse.prototype = new Doctor("Dr.John", "22yrs");
+
+        const nurseDetails = new Nurse("Marry", "6yrs");
+        
+        document.write("DocName:", nurseDetails.docName + "<br>"); 
+        document.write("DocExperiance:", nurseDetails.docExperience + "<br>"); 
+        document.write("NurseName:", nurseDetails.nurseName + "<br>"); 
+        document.write("NurseExperiance:", nurseDetails.nurseExperience + "<br>"); 
+        document.write("PatientName:", nurseDetails.patientName + "<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="head">
+            <h1>ENQUIRY FORM</h1>
+            <p>If you have any queries kindly take a moment to fill up this form, our representatives will contact you shortly</p>
+        </div>
+        <div class="background-circle">
+            <div class="content">
+                
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Customer Name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Mail@example.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="billNumber">Bill Number</label>
+                        <input type="text" id="billNumber" name="billNumber" placeholder="Bill Number" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="Your Phone Number" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="enquiry">Customer Enquiry</label>
+                        <textarea id="enquiry" name="enquiry" placeholder="Your Queries" required></textarea>
+                    </div>
+
+                    <div class="button">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>&copy; 2024 Enquiry Form. All rights Reserved| designed by <span>W3Layouts</span> </footer>
+    </div>
+    
+</body>
+</html>

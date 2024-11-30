@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .skills-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .skill img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+        .skill p {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="skills-container">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">
+                <img src="html.png" alt="HTML Icon">
+                <p>HTML</p>
+            </div>
+            <div class="skill">
+                <img src="css.png" alt="CSS Icon">
+                <p>CSS</p>
+            </div>
+            <div class="skill">
+                <img src="js.png" alt="JavaScript Icon">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill">
+                <img src="https://www.mongodb.com/assets/images/global/favicon.ico" alt="MongoDB Logo">
+                <p>MongoDB</p>
+            </div>
+            <div class="skill">
+                <img src="express.png" alt="Express.js Logo">
+                <p>Express.js</p>
+            </div>
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React.js Logo">
+                <p>React.js</p>
+            </div>
+            <div class="skill">
+                <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js Logo">
+                <p>Node.js</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

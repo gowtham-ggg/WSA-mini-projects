@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Rectangle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        div {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="number"], input[type="text"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+        }
+        input[type="text"] {
+            background-color: #e9ecef;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 0;
+            width: 100%;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Find Area and Perimeter of Rectangle</h1>
+        <input type="number" placeholder="Length" id="length">
+        <input type="number" placeholder="Width" id="width">
+        <button id="button">GET</button>
+        <input type="text" placeholder="AREA" id="area" readonly>
+        <input type="text" placeholder="PERIMETER" id="perimeter" readonly>
+    </div>
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            const length = parseInt(document.getElementById("length").value);
+            const width = parseInt(document.getElementById("width").value);
+            const areaDisplay = document.getElementById("area");
+            const perimeterDisplay = document.getElementById("perimeter");
+
+            function rectangle(len, width) {
+                const area = len * width;
+                const perimeter = 2 * (len + width);
+
+                areaDisplay.value = `Area: ${area}`;
+                perimeterDisplay.value = `Perimeter: ${perimeter}`;
+            }
+            rectangle(length, width);
+        });
+    </script>
+</body>
+</html>

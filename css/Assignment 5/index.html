@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSA-CSS-Assignment 5</title>
+    <style>
+        .main-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .circle {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .circle .quad {
+            position: absolute;
+            height: 50%;
+            width: 50%;
+        }
+
+        .top-left {
+            top: 0;
+            left: 0;
+            background-color: red;
+        }
+
+        .top-right {
+            top: 0;
+            right: 0;
+            background-color: orange;
+        }
+
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            background-color: green;
+        }
+
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            background-color: purple;
+        }
+
+
+        .flower {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            padding:6%;
+        }
+        .flower .petal {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            border-radius: 100% 50% 0% 50%; 
+
+        }
+
+        .red {
+            background-color: red;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .orange {
+            background-color: orange;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%) rotate(135deg);
+        }
+
+        .purple {
+            background-color: purple;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) rotate(225deg);
+        }
+
+        .green {
+            background-color: green;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(315deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Circle Shape -->
+        <div class="circle">
+            <div class="quad top-left"></div>
+            <div class="quad top-right"></div>
+            <div class="quad bottom-left"></div>
+            <div class="quad bottom-right"></div>
+        </div>
+
+        <!-- Flower Shape -->
+        <div class="flower">
+            <div class="petal red"></div>
+            <div class="petal orange"></div>
+            <div class="petal green"></div>
+            <div class="petal purple"></div>
+        </div>
+    </div>
+</body>
+</html>

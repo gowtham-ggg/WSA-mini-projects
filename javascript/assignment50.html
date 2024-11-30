@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Window Example</title>
+</head>
+<body>
+    <button id="create">Create</button>
+    <button id="resize">Resize</button>
+    <button id="scroll">Scroll</button>
+    <button id="move">Move</button>
+
+    <script>
+        // Get button elements
+        const create = document.getElementById("create");
+        const resize = document.getElementById("resize");
+        const scroll = document.getElementById("scroll");
+        const move = document.getElementById("move");
+
+        let newWindow; 
+
+
+        create.addEventListener("click", () => {
+            newWindow = window.open("https://www.google.com", "GoogleWindow", "width=800,height=600");
+        });
+
+        resize.addEventListener("click", () => {
+            if (newWindow && !newWindow.closed) {
+                newWindow.resizeTo(500, 400); 
+            } else {
+                alert("The window is not open!");
+            }
+        });
+
+        scroll.addEventListener("click", () => {
+            if (newWindow && !newWindow.closed) {
+                newWindow.scrollBy(10, 0); 
+            } else {
+                alert("The window is not open!");
+            }
+        });
+
+
+        move.addEventListener("click", () => {
+            if (newWindow && !newWindow.closed) {
+                newWindow.moveBy(50, 50); 
+            } else {
+                alert("The window is not open!");
+            }
+        });
+    </script>
+</body>
+</html>

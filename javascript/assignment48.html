@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment48</title>
+</head>
+<body>
+    <p id="firstp">Write a JavaScript program to create three paragraphs with different class name and manipulate style rules using CSS class selectors</p>
+    <p id="secondp">Write a JavaScript program to create three paragraphs with different class name and manipulate</p>
+    <p id="thirdp">Write a JavaScript program to create three paragraphs with different.</p>
+    <button id="button">CLICK ME</button>
+    <script>
+        const firstPara = document.getElementById("firstp");
+        const secondPara = document.getElementById("secondp");
+        const thirdPara = document.getElementById("thirdp");
+
+        const button = document.getElementById("button");
+        button.addEventListener("click", ()=>{
+            firstPara.style.color = "white";
+            firstPara.style.backgroundColor ="green";
+
+            secondPara.style.color = "black";
+            secondPara.style.backgroundColor = "red";
+
+            thirdPara.style.color = "red";
+            thirdPara.style.backgroundColor = "black";
+        });
+    </script>
+</body>
+</html>

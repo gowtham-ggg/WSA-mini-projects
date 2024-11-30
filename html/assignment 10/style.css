@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+header {
+    height: 250px;
+    width: 100%;
+    background-image: url('img/header.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+header h2{
+    padding-top: 150px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #e64008;
+}
+
+h1 {
+    font-size: 36px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+.time{
+    padding: 10px;
+}
+/* Left Column: Topic One */
+.left {
+    background-color:#978390;
+    color: white;
+    width: 20%; 
+}
+
+.left h1 {
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+    background-color:  #5f4453; 
+    color: white;
+}
+
+.left p {
+    line-height: 1.5;
+    padding: 10PX;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+    height: 100%; 
+}
+
+.image-container img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+    margin: 0; 
+    box-sizing: border-box; 
+}
+
+
+/* Right Column */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%; 
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+/* Topic Two */
+.topic-two {
+    background-color: white; 
+    height: 600px;
+    width: 50%;
+    color: black;
+    border: 2PX solid #ecbd74;
+}
+
+.topic-two h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    background-color:#ecbd74; 
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+.topic-two p {
+    line-height: 1.6;
+    padding: 10PX;
+}
+
+/* Topic Three */
+.topic-three {
+    background-color: #978390; 
+    width: 50%;
+    height: 600px;
+    color: white;
+   
+}
+
+.topic-three h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    background-color: #5f4453; 
+    padding: 10px;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.topic-three p {
+    line-height: 1.6;
+    padding: 10PX;
+}
+
+
+.key-dates {
+    background-color: white; 
+    border: 2px solid #d96c52;
+}
+
+.key-dates h1 {
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #d96c52; 
+    color: white;
+    padding: 10px;
+}
+
+.key {
+    display: flex;
+}
+
+.key p {
+    line-height: 1.5;
+    padding: 10px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE hempsalary: 10000,    deptName: "WSA"tml>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        const employee ={
+            name: "raghunath",
+            empId: 1,
+            empSalary: 10000,
+            deptName: "WSA"
+        }
+        document.write("a)")
+        for(let key in employee){
+            
+            document.write(` ${key} : ${employee[key]}<br><br>`)
+        }
+        let employeeLen = Object.keys(employee).length;
+        document.write(`<br>Length of the Employee objects : ${employeeLen}`);
+
+        delete employee.deptName;
+        console.log("<br> After deleting deptName property:");
+        console.log(employee);
+
+    </script>
+</body>
+</html>

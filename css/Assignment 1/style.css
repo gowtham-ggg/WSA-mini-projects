@@ -1,0 +1,106 @@
+/* #e89579 body color
+ #e89579  div 
+ #fea400 sumbit bg
+ #798e00 submit
+ #0e0099 h1
+ #57bcfe h4
+ #fa73b8 h4 div
+ #2d9db2 div 1
+ #f64a71 span
+ #8c1990 div 2
+ #518c54 div 3
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#d2d2d2;
+}
+.main-container{
+    margin: 2% 5%;
+    background-color: #e89579;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    overflow: hidden;
+}
+
+.container{
+    background-color:#dffefe ;
+    margin-top: 5%;
+    width: 50%;
+    padding: 5%;
+    text-align: center;
+}
+.header-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 70px;
+    transform: translateY(-50%);
+   
+} 
+.header-container h4{
+    background-color: white;
+    width: fit-content;
+    color:#fa73b8  ;
+   
+} 
+
+.head h1{
+    color: #0e0099;
+}
+.head h4{
+    color:  #57bcfe;
+}
+.ticket-container{
+    color:  #2d9db2;
+}
+.payment-container{
+    color: purple;
+}
+.billing-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:green ;
+    align-items: center;
+}
+.button{
+    margin-top: 10%;
+    margin-bottom: 10px;
+}
+button{
+    background-color: #fea400;
+    color: #798e00;
+    padding: 5px 10px;
+    border: 2px solid transparent; 
+    border-top: 2px solid white; 
+    border-left: 2px solid white; 
+    border-right: 2px solid black; 
+    border-bottom: 2px solid black; 
+}
+span{
+    color:#f64a71 ;
+}
+label{
+    font-size: 28px;
+}
+#package{
+    width: 40px;
+}
+#name{
+    width: 300px;
+}
+#street{
+    width: 300px;
+}
+#state{
+    width: 60px;
+}
+#zip{
+    width: 100px;
+}

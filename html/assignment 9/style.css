@@ -1,0 +1,41 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+header{
+    background-color: yellow;
+    position: fixed;
+    top: 0;
+    height: 10%;
+    width: 100%;
+}
+header nav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    
+}
+    
+nav ul li{
+    padding: 10px;
+}
+nav ul li a{
+    text-decoration: none;
+}
+.frame-container{
+    margin-top: 5%;
+    height: 100vh;
+    width: 100%; 
+ }
+ .frame-container iframe{
+    height: 100%;
+    width: 100%;
+ }
+ nav ul li a:hover{
+    color: red;
+ }
+ nav ul li a:active{
+    color: green;
+ }
+

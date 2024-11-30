@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Para</title>
+</head>
+<body>
+    <p id="para">Click Here!!! To change Content...</p>
+    <script>
+        const para = document.getElementById("para");
+
+        para.addEventListener("click", ()=>{
+            para.innerText = "This is Changed Text";
+        });
+    </script>
+</body>
+</html>

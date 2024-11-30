@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #f7f7f7;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.header-left{
+    border-style: double;
+    
+}
+.header-left, .header-right {
+    width: 25%;
+    text-align: left;
+    padding: 5px;
+}
+
+.header-title {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Garamond', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 50%;
+    
+}
+
+.sub-header {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    margin-bottom: 20px;
+    border-bottom: 3px solid;
+}
+
+/* Main Headline */
+.main-headline h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    background-color: lightgray;
+}
+
+/* Flex container for the stories */
+.story-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.story-row1{
+    margin-bottom: 5px;
+    border-bottom: 3px solid;
+}
+
+.story-column {
+    width: 30%; 
+    padding: 0 10px;
+
+}
+
+.image-row2{
+    border-right: 3px solid;
+}
+.story-image img {
+    width: 100%;
+    height: auto;
+   
+}
+
+/* Styling the quote box */
+.quote-box {
+    background-color: lightgray;
+    padding: 10px;
+    font-style: italic;
+    border-left: 3px solid black;
+    margin-top: 20px;
+}
+
+.third-row-heading{
+    text-align: center;
+    margin-bottom: 10px;
+}

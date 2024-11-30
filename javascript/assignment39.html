@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Property by Using Prototype</title>
+</head>
+<body>
+    <script>
+        // Constructor function for Person
+        function Person(firstName, age, phone) {
+            this.firstName = firstName;
+            this.age = age;
+            this.phone = phone;
+        }
+
+        // Adding lastName to the prototype of Person
+        Person.prototype.lastName = "K H";
+
+        // Creating an instance of Person
+        const person = new Person("Rohan", 24, 9123456789);
+
+        // Displaying the details
+        document.write("First Name: " + person.firstName + "<br>");
+        document.write("Last Name: " + person.lastName + "<br>"); // Accessing prototype property
+        document.write("Age: " + person.age + "<br>");
+        document.write("Phone Number: " + person.phone + "<br>");
+    </script>
+</body>
+</html>

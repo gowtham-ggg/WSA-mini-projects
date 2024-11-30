@@ -1,0 +1,262 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #202020;
+    color: white;
+    font-family: "Poppins";
+}
+
+.start-menu{
+  display: grid;
+  background-color: black;
+  grid-template-columns:repeat(2,30%);
+  grid-template-rows: repeat(1,210px);
+  gap: 17%;
+  height: 120vh;
+  width: 88%;
+  
+}
+
+.create{
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  grid-template-rows: repeat(1, 160px);
+  gap: 10px;
+  margin-left: 20px;
+  
+}
+img{
+  height: 60px;
+}
+.first-title{
+  background-color:#0176d1;
+}
+.mail{
+  grid-column: span 2;
+}
+.mail img{
+  margin: 10px 10px 10px 20px;
+}
+.mail p{
+  flex-direction: column;
+  padding-left: 10px;
+}
+.mail p:last-child{
+  padding-left: 5px;
+}
+.calendar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+ 
+}
+.four-tile{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#office{
+  height: 20px;
+
+}
+.office{
+  display: flex;
+ flex-direction: column;
+ background-color: #dd3a00;
+ text-align: center;
+ padding-top: 20px;
+}
+.off-icon{
+  padding-top: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.paint{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.text{
+  display: flex;
+  width: 100%;
+}
+.text p{
+  padding-top: 20px;
+}
+.play {
+  display: grid;
+  grid-template-columns: repeat(3, 180px); 
+  grid-template-rows: repeat(3, 160px); 
+  gap: 10px;
+} 
+
+.xbox, .photos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; 
+  padding: 10px;
+}
+
+.xbox {
+  background-color: green;
+}
+
+.photos {
+  background-color: #0176d1;
+}
+.video-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+.games img { 
+ display: grid;  
+ justify-content: center;
+ align-items: center;
+ height: 160px;
+ width: 180px;
+}
+
+.explore {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  grid-template-rows: repeat(1, 160px);
+  gap: 10px;
+  margin-left: 20px;
+  height: auto; /* Let the content define the height */
+  align-content: start; /* Align content to prevent extra space */
+}
+
+
+.store{
+  background-image: url(src/bgmi.jpeg);
+  background-size: 100%;
+  grid-column: span 2;
+  background-position: center;
+  display: flex;
+}
+.store-text{
+  display: flex;
+  align-items: flex-end;
+}
+.store-text img{
+  padding-left: 260px;
+}
+.pencil{
+  background-image: url(src/pencil.PNG);
+    display: flex;
+    align-items: flex-end; /* Align items (like text) to the bottom */
+    width: 180px;
+    height: 160px;
+  }
+
+.weather{
+  background-color: #0176d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 160px;
+}
+.weather img{
+  width: 180px;
+  height: 160px;
+}
+.fb{
+  background-color: #435eb2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 160px;
+}
+.twitter{
+  background-color: #2aa8e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 160px;
+}
+.internet-explorer{
+  background-color: #0078d5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.ps{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 160px;
+}
+.news{
+  background-color: #cf3338;
+}
+.head-4th{
+  margin-top: 45%;
+}
+.oem-group{
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  grid-template-rows: repeat(1, 160px);
+  gap: 10px;
+  margin-left: 20px;
+}
+.oem-dash{
+  background-color: #10255e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 160px;
+}
+.group-buttons{
+  background-color:#10255e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+.group-buttons img{
+  padding: 10px;
+}
+.oem-sync{
+  display: flex;
+  flex-direction: column;
+  background-color:#10255e;
+  justify-content: center;
+  align-items: center;
+}
+.kindle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 160px;
+}
+
+.intel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.amazon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fea500;
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 13</title>
+    <script src="https://kit.fontawesome.com/1a61482e4b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        Edmin
+        <ul>
+            <li><a href="#"><img src="src/inbox.PNG"></a></li>
+            <li><a href="#"><img src="src/eye.svg" height="25px"></a></li>
+            <li><a href="#"><img src="src/charts.png" height="25px"></a></li>
+            <li><input type="text" id="search"><img src="src/search.png" height="25px"></li>
+        </ul>
+        <ul>
+            <li><a href="#">Dropdown </a></li>
+            <li><a href="#">Support<i class="fa-solid fa-caret-down"></i></a></li>
+            <li><a href="#"><img src="src/man.PNG"></a><i class="fa-solid fa-caret-down"></i></li>
+        </ul>
+        <i class="fa fa-bars hamburger"></i> 
+    </nav>
+
+    <div class="main-container">
+        <div class="dash-board">
+            <div class="board">
+                <div class="item dash">
+                    <img src="src/dashboard.png">
+                    <a href="#">dashboard</a>
+                </div>
+                <div class="item-2">
+                    <div class="items">
+                        <img src="src/announce.PNG" id="img">
+                        <a href="#">News Feed</a>
+                    </div>
+                    <div class="item">
+                        <img src="src/icon9.png">
+                        <a href="#">Inbox</a>
+                        <div id="msg">11</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="src/tasks.png">
+                    <a href="#">Tasks</a>
+                    <div id="task">19</div>
+                </div>
+            </div> 
+            <div class="item-3">
+                <div class="item">
+                    <img src="src/b.jpg">
+                    <a href="#">Buttons</a>
+                </div>
+                <div class="item">
+                    <img src="src/typography.png">
+                    <a href="#">Typography</a>
+                </div>
+                <div class="item">
+                    <img src="src/forms.png">
+                    <a href="#">Forms</a>
+                </div>
+                <div class="item">
+                    <img src="src/tables.png">
+                    <a href="#">Tables</a>
+                </div>
+                <div class="item">
+                    <img src="src/charts.png">
+                    <a href="#">Charts</a>
+                </div>
+            </div>
+            <div class="item4">
+                <div class="item">
+                    <img src="src/more pages.jpg">
+                    <a href="#">More Pages</a>
+                    <div class="arow"><i class="fa-solid fa-caret-down"></i></div>
+                </div>
+                <div class="item">
+                    <img src="src/logout.png">
+                    <a href="#">LogOut</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="right-container">
+            <div class="content">
+                <div class="growth icon"><img src="src/loop symbol.PNG"><span>65%</span> <br> growth</div>
+                <div class="newuser icon"><img src="src/people.PNG">New Users</div>
+                <div class="profit icon"><img src="src/money.PNG"><span>15,152</span> <br> Profit</div>
+
+                <div class="group-menu">
+                    <div class="messages icon"><img src="src/inbox.PNG">Messages</div>
+                    <div class="clients icon"><img src="src/4 people.PNG">Clients</div>
+                    <div class="expenses icon"><img src="src/arrow.PNG">Expenses</div>
+                    <div class="sales icon"><img src="src/save.PNG">Total sales</div>
+                    <div class="social icon"><img src="src/announce.PNG">Social Feed</div>
+                    <div class="bounce icon"><img src="src/bounce.PNG">Bounce Rate</div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <span class="label">Windows 8</span>
+                        <div class="bar">
+                            <div class="progress windows"></div>
+                        </div>
+                        <span class="percent">78%</span>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <span class="label">Mac</span>
+                        <div class="bar">
+                            <div class="progress mac"></div>
+                        </div>
+                        <span class="percent">56%</span>
+                    </div>
+            
+                    <div class="progress-bar">
+                        <span class="label">Linux</span>
+                        <div class="bar">
+                            <div class="progress linux"></div>
+                        </div>
+                        <span class="percent">44%</span>
+                    </div>
+            
+                    <div class="progress-bar">
+                        <span class="label">iPhone</span>
+                        <div class="bar">
+                            <div class="progress iphone"></div>
+                        </div>
+                        <span class="percent">67%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="graph">
+                <div class="profit-chart">
+                    <p>Profit Chart</p>
+                </div>
+                <img src="src/graph.PNG" alt="graph">
+            </div>
+            <div class="data-tables">
+                <div class="data">
+                    <div class="data-head">
+                        <p>Data Tables</p>
+                    </div>
+                    <div class="data-tables">
+                        <table id="example" class="display">
+                            <thead>
+                                <div class="search-table">
+                                    <div class="show">
+                                        show <input type="number" id="show"> entries
+                                    </div>
+                                    <div class="table-search">search <input type="text" id="t-search"></div>
+                                </div>
+                                <tr>
+                                    <th>Rendering engine</th>
+                                    <th>Browser</th>
+                                    <th>Platform(s)</th>
+                                    <th>Engine version</th>
+                                    <th>CSS grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>Firefox 1.0</td>
+                                    <td>Win 98+ / OSX.2+</td>
+                                    <td>1.7</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>Firefox 1.5</td>
+                                    <td>Win 98+ / OSX.2+</td>
+                                    <td>1.8</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>Firefox 2.0</td>
+                                    <td>Win 98+ / OSX.2+</td>
+                                    <td>1.8</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>camino 1.0</td>
+                                    <td>OSX.2+</td>
+                                    <td>1.8</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>NetCafe 1.0</td>
+                                    <td>Win 95</td>
+                                    <td>1.7</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>Mozilla 1.0</td>
+                                    <td>Windows 98+/OSX 2+</td>
+                                    <td>1.8</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>Netscape Browser 8</td>
+                                    <td>Win 98SE+</td>
+                                    <td>1.7</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>Netscape Navigator 9</td>
+                                    <td>Win 98+ / OSX.2+</td>
+                                    <td>1.8</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>Mozilla 1.0</td>
+                                    <td>Win 95+ / OSX.1+</td>
+                                    <td>1.7</td>
+                                    <td>A</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">Showing 1 to 10 of 57 entries</td>
+                                    <td><a href="#">&lt;</a> <a href="#">&gt;</a></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <footer>
+        <p>&copy; 2024 Designed by Gowtham G</p>
+    </footer>
+</body>
+</html>

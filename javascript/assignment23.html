@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum and Product of Array</title>
+    <style>
+        /* Center the content on the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Style the container */
+        div {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Style input fields */
+        input[type="text"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Style button */
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Readonly fields styling */
+        input[readonly] {
+            background-color: #e9e9e9;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Sum:" id="sum" readonly>
+        <input type="text" placeholder="Product" id="product" readonly>
+        <input type="text" placeholder="ex: 1,2,3,4,5,6..." id="input">
+        <button id="button">Calculate</button>
+    </div>
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            const input = document.getElementById("input").value;
+            const array = input.split(',').map(Number);
+
+            let sum = 0;
+            let product = 1;
+            for (let i = 0; i < array.length; i++) {
+                sum += array[i];
+                product *= array[i];
+            }
+
+            document.getElementById("sum").value = `Sum: ${sum}`;
+            document.getElementById("product").value = `Product: ${product}`;
+        });
+    </script>
+</body>
+</html>

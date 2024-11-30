@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track User Visits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .image {
+            margin-top: 20px;
+        }
+        .info {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Website!</h1>
+    <img src="https://via.placeholder.com/300" alt="Placeholder Image" class="image">
+
+    <div class="info" id="visitInfo"></div>
+
+    <script>
+
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = `expires=${date.toUTCString()}`;
+            document.cookie = `${name}=${value}; ${expires}; path=/`;
+        }
+
+        // Function to get a cookie
+        function getCookie(name) {
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookies = decodedCookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                if (cookie.startsWith(name + "=")) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+
+        // Function to handle user visits
+        function trackUserVisit() {
+            let userName = getCookie("userName");
+            let visitCount = parseInt(getCookie("visitCount")) || 0;
+            let lastVisit = getCookie("lastVisit");
+
+            if (!userName) {
+                // Ask for the user's name on first visit
+                userName = prompt("Welcome! What is your name?");
+                setCookie("userName", userName, 30);
+                visitCount = 0;
+            }
+
+            // Update visit count
+            visitCount++;
+            setCookie("visitCount", visitCount, 30);
+
+            // Update last visit date
+            const now = new Date();
+            setCookie("lastVisit", now.toUTCString(), 30);
+
+            // Display the information
+            const visitInfoElement = document.getElementById("visitInfo");
+            if (visitCount === 1) {
+                visitInfoElement.innerHTML = `
+                    Hello, ${userName}! This is your first visit.
+                    You have never visited before.
+                `;
+            } else {
+                visitInfoElement.innerHTML = `
+                    Welcome back, ${userName}!
+                    You have visited this page ${visitCount} times.<br>
+                    Your last visit was on: ${lastVisit}
+                `;
+            }
+        }
+
+        trackUserVisit();
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome or Not</title>
+   <style>
+  
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        div {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+ 
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:readonly {
+            background-color: #e9ecef;
+        }
+
+        button {
+            width: 50%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #3e8e41;
+        }
+        #display{
+            padding: 20px;
+            width: 90%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Palindrome or Not</h1>
+        <input type="text" id="input" placeholder="Enter text">
+        <input type="text" id="display" placeholder="Is Palindrome / Not Palindrome" readonly>
+        <button id="button">CHECK</button>
+    </div>
+
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            const input = document.getElementById("input").value;
+            const display = document.getElementById("display");
+
+            function isPalindrome(str) {
+                let reversed = "";
+                for (let i = str.length - 1; i >= 0; i--) {
+                    reversed += str[i];
+                }
+                return reversed;
+            }
+
+            const inputString = input;
+            const result = isPalindrome(input);
+
+            if (result === inputString) {
+                display.value = "Is Palindrome";
+                display.style.color = "#4CAF50";
+            } else {
+                display.value = "Is Not Palindrome"; 
+                display.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

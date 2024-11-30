@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascending and descending order</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357abd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="Ascending Order" id="asscend" readonly>
+        <input type="text" placeholder="Descending Order" id="descend" readonly>
+        <input type="text" placeholder="Ex: 1,9,6,5,7..." id="input">
+        <button id="button">Sort Array</button>
+    </div>
+    
+    <script>
+
+        const button = document.getElementById("button");
+        button.addEventListener("click", ()=>{
+
+            const input = document.getElementById("input").value;
+            const array = input.split(',').map(Number);
+
+            const asscending = [...array].sort((a,b)=> a-b);
+            const descending = [...array].sort((a,b)=> b-a);
+
+            document.getElementById("asscend").value = asscending;
+            document.getElementById("descend").value = descending;
+
+        });
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif; /* Use correct font-family instead of font-size */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 60px; 
+    padding: 0 20px;
+    margin-bottom: 10px;
+    
+}
+
+nav h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 0 100px; 
+    text-align: center;
+}
+
+span {
+    color: orangered;
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px; 
+}
+
+nav ul li a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    color: black; 
+    font-weight: 500; 
+}
+
+nav ul li a:hover {
+    color: orangered;
+}
+
+.main-container {
+    background-image: url("hero_2.jpg");
+    height: 100vh;
+    background-size: cover; /* Cover the entire area */
+    overflow: hidden;
+}
+
+.content {
+    padding: 15% 20% 10% 10%;
+    width: 30%;
+    color: snow;
+}
+.buttons{
+    margin-top: 15%;
+}
+.link {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.link:hover {
+    background-color: white;
+    color: black;
+}

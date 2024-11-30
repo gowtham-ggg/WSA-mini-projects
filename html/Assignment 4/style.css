@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-cointainer{
+    display: flex;
+}
+.header-container{
+    padding: 20px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ede7aa;
+}
+h1{
+    color: #4062d4;
+    text-align: center;
+    margin-bottom: 20px;
+}
+nav ul {
+    list-style-type: none;
+}
+.frame-container{
+    height: 100vh;
+    width: 80%;
+}
+.frame-container iframe{
+ height: 100vh;
+ width: 100%;
+}

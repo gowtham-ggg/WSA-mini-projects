@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd Or Even</title>
+    <style>
+        body,html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            width: 300px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #display::placeholder {
+            color: #888;
+            font-style: italic;
+        }
+
+        button {
+            width: 90%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="display" placeholder="Odd/Even" readonly>
+        <input type="number" placeholder="Enter Number" id="input">
+        <button id="button">Check</button>
+        <button id="reset">Reset</button>
+    </div>
+    <script>
+
+const button = document.getElementById("button");
+const resetBtn = document.getElementById("reset");
+const input = document.getElementById("input");
+const display = document.getElementById("display");
+
+button.addEventListener("click", () => {
+    function oddOrEven(number) {
+        if (isNaN(number) || number <= 0) {
+            display.value = "Enter Valid Number";
+        } else if (number % 2 === 0) {
+            display.value = "Even";
+        } else {
+            display.value = "Odd";
+        }
+    }
+
+    const inputValue = parseInt(input.value); // Convert input to integer
+    oddOrEven(inputValue); // Pass input value to the function
+});
+
+resetBtn.addEventListener("click", () => {
+    input.value = ""; 
+    display.value = ""; 
+});
+
+    
+    </script>
+</body>
+</html>

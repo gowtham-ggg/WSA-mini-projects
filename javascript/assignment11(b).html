@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit to Celsius</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        #display {
+            background-color: #f9f9f9;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Convert Fahrenheit To Celsius</h1>
+        <input type="text" id="display" name="display" placeholder="Result" readonly><br>
+        <input type="number" placeholder="Fahrenheit" id="input"><br>
+        <button id="button">Convert</button>
+    </div>
+    <script>
+        const input = document.getElementById("input");
+        const button = document.getElementById("button");
+
+        button.addEventListener("click", () => {
+            function FahrenheitToCelsius(Fahrenheit) {
+                return (Fahrenheit - 32) / 1.8;
+            }
+
+            let fahrenheitValue = parseFloat(input.value);
+            if (isNaN(fahrenheitValue)) {
+                alert("Please enter a valid number!");
+                return;
+            }
+
+            let result = FahrenheitToCelsius(fahrenheitValue);
+            let display = document.getElementById("display");
+            display.value = result.toFixed(2) + " °C";
+        });
+    </script>
+</body>
+</html>

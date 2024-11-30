@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change font , color, text</title>
+</head>
+<body>
+    <p id="para">
+        Modify the style of the content when clicked on chage font, change the color and font size when clicked on change color and font size.
+    </p>
+    <button id="font"> Change Font</button>
+    <button id="color">Change Color</button>
+    <button id="size">Change Size</button>
+
+    <script>
+        const para = document.getElementById("para");
+        const changeFont = document.getElementById("font");
+        changeFont.addEventListener("click", ()=>{
+            para.style.fontFamily = "Arial, Helvetica, sans-serif";
+        });
+
+        const changeColor = document.getElementById("color");
+        changeColor.addEventListener("click", ()=>{
+            para.style.color = "lightgreen";
+        });
+
+        const changeSize = document.getElementById("size");
+        changeSize.addEventListener("click", ()=>{
+            para.style.fontSize = "1.5em";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Following Patterns</title>
+</head>
+<body>
+    <script>
+        document.write("Pattern 1 <br>" );
+        for(let i =1; i<=4; i++){
+            let row = "";
+            for(let j=1; j<=i;j++){
+                row += i + " ";
+            }
+            document.write(row + "<br>");
+        }
+        document.write("Pattern 2 <br>");
+        let num = 1;
+        for(let k=1; k<=4; k++){
+            let rows = "";
+            for(let l=1; l<=k; l++){
+                rows += num + " ";
+                num ++;
+            }
+            document.write(rows + "<br>");
+        }
+        document.write("3rd Pattern <br>");
+        for(let m =5; m>=1; m--){
+            let rowss = "";
+            for(let n = 1; n<=m; n++){
+                rowss += "* ";
+            }
+            document.write(rowss + "<br>");
+        }
+        
+    </script>
+</body>
+</html>

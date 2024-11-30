@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSA-CSS-Assignment 4</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #e6e6e6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+
+        .left h4, .right h4 {
+            background-color: #e7e7e7;
+            width: 120px;
+            height: 100px;
+            margin-bottom: 0;
+            border: 1px solid;
+            padding: 10px;
+            text-align: center;
+            border-bottom: none;
+        }
+        .left h4{
+            position: relative;
+            transform: translateY(1%);
+        }
+        .right h4{
+            position: relative;
+            transform: translateY(1%);  
+            left: 52%; 
+        }
+        .left p, .right p {
+            background-color: #e7e7e7;
+            width: 250px;
+            height: 100px;
+            margin-top: 0;
+            border: 1px solid;
+            padding: 10px;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .title {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        .title h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .title p {
+            margin: 5px 0 0 0;
+            font-size: 20px;
+        }
+
+       
+        .main-container {
+            display: flex;
+            padding: 20px;
+            height: 80vh;
+        }
+
+      
+        .left-column {
+             flex: 1; 
+            margin-right: 20px;
+        }
+
+        .center-column {
+            flex: 2; 
+            margin-right: 20px;
+            text-align: center;
+            
+        }
+
+  
+        .right-column {
+             flex: 1; 
+             
+        }
+
+        .box {
+            background-color: #fff;
+            border: 1px solid;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: red;
+            border: 1px solid #ccc;
+            padding: 30px;
+            text-align: center;
+            margin: 10px 150px;
+            
+        }
+        .box-left1{
+            height: 40%;
+        }
+        .box-left2{
+            height: 60%;
+        }
+        .center-box{
+            height: 103%;
+        }
+        .box-right1{
+            height: 40%;
+        }
+        .box-right2{
+            height: 20%;
+            margin-bottom: 0;
+        }
+        .box-right3{
+            height: 20%;
+            background-color: #fff;
+            border: 1px solid;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            
+        }
+        .box-right4{
+           height: 20%; 
+           background-color: #fff;
+            border: 1px solid;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="left">
+            <h4>Do not put logo here</h4>
+            <p>do not paste logo here this space only for logo.</p>
+        </div>
+        <div class="title">
+            <h1>The pitched at general audience that provides conclusion or at least hints at something interesting</h1>
+            <p>Collin B. Purringston, Department</p>
+        </div>
+        <div class="right">
+            <h4></h4>
+            <p>Don not put logo here</p>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Left Column: Introduction and Materials -->
+        <div class="left-column">
+            <div class="box box-left1">
+                <h2>Introduction</h2>
+                <p>Persuade the reader you have novel, interesting questions and hypotheses.</p>
+            </div>
+            <div class="box box-left2">
+                <h2>Materials and Methods</h2>
+                <p>If the viewer truly wants to know details, they will ask or email you.</p>
+            </div>
+        </div>
+
+        <!-- Center Column: Results -->
+        <div class="center-column">
+            <div class="box center-box">
+                <h2>Results</h2>
+                <p>Highlight your large photographs, charts, or maps in this section.</p>
+                <div class="highlight">
+                    <p>If you have one or two simple graphics, viewers will explore them. Too many graphics will overwhelm.</p>
+                </div>
+                <p>Annotate graphics with arrows and callout boxes so that viewer is visually led through how hypothesis is addressed...</p>
+            </div>
+        </div>
+
+        <!-- Right Column: Conclusion, Literature, etc. -->
+        <div class="right-column">
+            <div class="box box-right1">
+                <h2>Conclusions</h2>
+                <p>Explain why the outcome is interesting. Don’t assume it’s obvious.</p>
+            </div>
+            <div class="box box-right2">
+                <h2>Literature Cited</h2>
+                <p>Author, j 2012.article Title. Journal of Something, pages 1: 1-2.</p>
+             
+            </div>
+            <div class="box-right3">
+                <h2>Acknowledgments</h2>
+                <p>Be brief.</p>
+            </div>
+            <div class="box-right4">
+                <h2>Further Information</h2>
+                <p>Contact info, email, links to templates, etc.</p>
+            </div>
+            
+           
+        </div>
+    </div>
+</body>
+</html>

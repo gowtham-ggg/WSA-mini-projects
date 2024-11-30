@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 1rem;
+        }
+        #outputMessage {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>String Checker</h1>
+    <input type="text" id="userInput" placeholder="Enter your string here">
+    <button id="checkButton">Check String</button>
+    <div id="outputMessage"></div>
+
+    <script>
+        function checkString(input) {
+            // Regular expressions
+            const alphaNumericRegex = /[a-zA-Z0-9]/; // Checks for alphabets or digits
+            const dashRegex = /-/; // Checks for dashes
+            const underscoreRegex = /_/; // Checks for underscores
+
+            // Result checks
+            const hasAlphaNumeric = alphaNumericRegex.test(input);
+            const hasDash = dashRegex.test(input);
+            const hasUnderscore = underscoreRegex.test(input);
+
+            // Build output message
+            if (hasAlphaNumeric || hasDash || hasUnderscore) {
+                let result = "String contains ";
+                if (hasAlphaNumeric) result += "alphanumeric";
+                if (hasDash) result += (hasAlphaNumeric ? ", " : "") + "dash";
+                if (hasUnderscore) result += (hasAlphaNumeric || hasDash ? ", " : "") + "underscore";
+                return result + ".";
+            } else {
+                return "String doesn’t contain alpha, numeric, dash, or underscore.";
+            }
+        }
+
+        // DOM elements
+        const userInput = document.getElementById("userInput");
+        const checkButton = document.getElementById("checkButton");
+        const outputMessage = document.getElementById("outputMessage");
+
+        // Add event listener
+        checkButton.addEventListener("click", () => {
+            const input = userInput.value.trim();
+            const message = checkString(input);
+            outputMessage.textContent = message;
+        });
+    </script>
+</body>
+</html>

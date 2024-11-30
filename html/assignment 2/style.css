@@ -1,0 +1,83 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    color: rgb(239, 3, 239);
+    text-align: center;
+}
+
+/* City Titles */
+.city-title {
+    color: white;
+    padding: 10px;
+}
+
+.rameshwaram {
+    background-color: rgb(110, 6, 115);
+}
+
+.chennai {
+    background-color: rgb(40, 232, 232);
+    color: rgb(6, 60, 136);
+}
+
+.bengaluru {
+    background-color: antiquewhite;
+    color: rgb(204, 77, 77);
+}
+
+.kochi {
+    background-color: rgb(227, 44, 35);
+    color: rgba(251, 248, 248, 0.516);
+}
+
+.coimbatore {
+    background-color: #08b742;
+    color: rgba(11, 18, 0, 0.74);
+}
+
+.madurai {
+    background-color: #872323;
+    color: rgb(103, 5, 13);
+}
+
+/* Paragraph colors */
+p {
+    color: rgb(162, 6, 147);
+}
+
+/* Styling the conclusion */
+.conclusion-title {
+    background-color: rgb(225, 73, 182);
+    color: rgb(208, 45, 72);
+    padding: 10px;
+}
+
+ul {
+    list-style: circle;
+    margin-left: 20px;
+}
+
+ul li {
+    color: #d30fa9;
+}
+
+/* Footer styling */
+footer {
+    background-color: #292727;
+    color: #fdfbfb;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}

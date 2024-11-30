@@ -1,0 +1,29 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main-container{
+    display: flex;
+    background-color:#ede7aa ;
+}
+.header-container{
+    width: 20%;
+    height: 100vh;
+    padding: 10px;
+    text-align: center;
+}
+.content-area{
+    width: 80%;
+    height: 100vh;
+}
+.content-area iframe{
+    width: 100%;
+    height: 100%;
+}
+h1{
+    color:#3b6bdd;
+}
+nav ul{
+    list-style-type: none;
+}

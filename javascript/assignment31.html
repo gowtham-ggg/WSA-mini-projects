@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+        div {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+    
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #27ee19;
+        }
+    
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+    
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        button:hover {
+            background-color: #45a049;
+        }
+    
+        input[readonly] {
+            background-color: #f9f9f9;
+        }
+        #display{
+            padding: 40px;
+            text-align: center;
+            color: red;
+        }
+    </style>
+    
+</head>
+<body>
+    <div>
+        <h1>Number Of Vowels</h1>
+        <input type="text" id="input" placeholder="Input Strings...">
+        <input type="text" id="display" placeholder="Output...." readonly>
+        <button id="button">COUNT</button>
+    </div>
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", ()=>{
+            const input = document.getElementById("input").value;
+            const display =document.getElementById("display");
+
+            function countVowels(str){
+                let count = 0;
+                let vowels = ["a","e","i","o","u"];
+                for(let char of str.toLowerCase()){
+                    if(vowels.includes(char)){
+                        count +=1;
+                    }
+                }
+                return count;
+            }
+            const result = countVowels(input);
+            display.value = `Number of vowels: ${result}`;
+
+        });
+    </script>
+</body>
+</html>

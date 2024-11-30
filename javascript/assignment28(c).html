@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalise First Char</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        div {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #f8f8f8;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: rgb(16, 197, 16);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color:green;
+            color: white;
+        }
+
+        input:focus, button:focus {
+            outline: none;
+            border-color: darkgreen;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: green;
+        }
+
+        #input {
+            background-color: #fff;
+        }
+
+        #display {
+            background-color: #e9ecef;
+            color: rgb(17, 129, 34);
+            padding: 40px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Capitalise First Letter</h1>
+        <input type="text" id="display" placeholder="Your Output Display Here!" readonly>
+        <input type="text" id="input" placeholder="Enter your words...">
+        <button id="button">Capitalise</button>
+    </div>
+
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            const input = document.getElementById("input").value;
+            const display = document.getElementById("display");
+
+            function capitalise(str) {
+                return str.split(" ").map(word => {
+                    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                }).join(" ");
+            }
+            display.value = capitalise(input);
+        });
+    </script>
+</body>
+</html>

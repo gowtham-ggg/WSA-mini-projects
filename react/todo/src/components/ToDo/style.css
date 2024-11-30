@@ -1,0 +1,141 @@
+/* Basic reset to remove default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the whole app */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#container {
+    width: 100%; 
+    background-color: #ffffff; 
+    border: 5px solid #e3200a; 
+    border-radius: 50px; 
+    padding: 20px; 
+    box-shadow: 10px 10px rgba(233, 14, 14, 0.2); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* To-do list container */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e74c3c;
+}
+h3{
+    margin: 20px;
+    text-align: center;
+    font-size: 2em;
+    color: #c0392b;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+
+
+/* To-do list styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    width: 350px;
+}
+
+/* Task styling */
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 10px 2px 5px rgba(221, 10, 10, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling for the task text */
+span {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-size: 1.1em;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Button for deleting task */
+button {
+    background-color: #e74c3c;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+button:focus {
+    outline: none;
+}
+@media (max-width: 600px) {
+    #container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    input[type="text"] {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px; /* Stack input and button vertically */
+    }
+    
+    ul {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 49</title>
+</head>
+<body>
+    <button id="para">Create Para</button>
+    <button id="nav">Create Nav</button>
+    <button id="strong">Create Strong</button>
+
+    <script>
+        const createPara = document.getElementById("para");
+        createPara.addEventListener("click", () => {
+            const p = document.createElement("p");
+            p.innerText = "Paragraph created";
+            document.body.appendChild(p); 
+        });
+
+        const createNav = document.getElementById("nav");
+        createNav.addEventListener("click", () => {
+            const navBar = document.createElement("nav");
+            const ul = document.createElement("ul");
+
+            const li1 = document.createElement("li");
+            li1.innerText = "Google";
+            const li2 = document.createElement("li");
+            li2.innerText = "Yahoo";
+
+
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            navBar.appendChild(ul);
+            document.body.appendChild(navBar);
+        });
+
+        const createStrong = document.getElementById("strong");
+        createStrong.addEventListener("click", () => {
+            const strong = document.createElement("strong");
+            strong.innerText = "Strong text created";
+            document.body.appendChild(strong); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FBF4FD;
+    font-family: "Poppins", sans-serif;
+}
+
+.main-container {
+    width: 100%;
+    height: auto;
+}
+
+.wsa-iconcontainer {
+    margin: 25px 60px;
+}
+
+.wsa-icon {
+    height: 50px;
+    width: 150px;
+}
+
+.sub-container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    width: 50%;
+    text-align: left;
+    padding-left: 60px;
+}
+
+.header {
+    color: #000000;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.calculator-container {
+    width: 50%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.background-circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: #F5EAF9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    width: 280px;
+    height: 450px;
+    background-color: white;
+    border-radius: 33px;
+    border: 10px solid #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+.output-field-container {
+    height: 100px; 
+    background-color: #F3F2F2;
+    border-radius: 20px;
+    margin: 2px 2px;
+    border: none;
+    padding-bottom: 20px;
+    
+}
+.output-field , .input-field{
+    background-color: #F3F2F2;
+    width: 94%;
+    margin: 1px 3px;
+    font-size: 40px;
+    padding: 13px 5px 0px 5px;
+    border-radius: 20px;
+    border: none;
+    text-align: end; 
+}
+.output-field:focus{
+    outline: none;
+}
+.input-field:focus{
+    outline: none;
+}
+
+.btn-row {
+    margin: auto auto auto  10px;
+    width: 93%;
+    
+}
+
+button {
+    margin: 4px 5px;
+    width: 50px;
+    border-radius: 10px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #000000e5;
+    color: white;
+}
+
+.bg-icon {
+    background-color: #FCEEBD;
+}
+
+.bg-icon:hover {
+    background-color: #BD882A;
+    color: white;
+}
+
+button > i {
+    color: #BD882A;
+}
+
+button:hover > i {
+    color: white;
+}
+
+.zero {
+    width: 115px;
+}
+
+.equal {
+    background-color: #FFC138;
+}
+
+.footer {
+    font-family: "Poppins", sans-serif;
+    padding: 60px;
+    font-size: 13px;
+    text-transform: uppercase;
+   
+}

@@ -1,0 +1,113 @@
+.main-container {
+    background-color:#103547;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Form circle background */
+.background-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#1b4c4d;
+    border-radius: 50%;
+    height: 750px;
+    width: 750px;
+}
+
+/* Form content */
+.content {
+    background-color: #041117;
+    border-radius: 15px;
+    padding: 40px;
+    height: auto;
+    width: 80%;
+    color: white;
+    text-align: center;
+}
+
+/* Form title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Form row to align label and input side by side */
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Label styling */
+form label {
+    width: 35%;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+   
+}
+
+/* Input and Textarea styling */
+form input,
+form textarea {
+    width: 60%;
+    padding: 10px;
+    background-color:rgba(16,23,33,255);
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Button styling */
+.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    gap: 15px;
+    width: 100%;
+}
+
+button {
+    display: flex;
+    padding: 10px 20px;
+    background-color: #f05d23;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+footer{
+position: absolute;
+bottom: 40px;
+}
+span{
+color: #f05d23;
+}
+.head{
+position: absolute;
+top: 40px;
+}

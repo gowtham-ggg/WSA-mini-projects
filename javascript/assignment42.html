@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change style</title>
+    
+</head>
+<body>
+    <p id="para" >The changeParaText function then executes the statement that will change the font color , font size , font family and font weight of paragraph and addBorder function will add border image to the paragraph.</p>
+    <button id="font">Change Font</button>
+    <button id="border">Change Border</button>
+
+    <script>
+        const para = document.getElementById("para");
+        const changeFont = document.getElementById("font");
+        changeFont.addEventListener("click", ()=>{
+            para.style.color = "navy";
+            para.style.fontFamily = "Poppins";
+            para.style.fontSize = "2em";
+        });
+        
+        const changeBorder = document.getElementById("border");
+        changeBorder.addEventListener("click", ()=>{
+            para.style="border: 2px dotted navy;"
+        });
+    </script>
+</body>
+</html>

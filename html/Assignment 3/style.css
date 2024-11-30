@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+.main-content{
+    margin: 2%;
+}
+.chemistry-container{
+    width:35%;
+   margin-bottom: 40px;
+}
+h1{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.row{
+    display: flex;
+    padding: 10px;
+}
+.row p{
+flex: 3;
+
+}
+.row h3{
+   flex: 1; 
+   font-size: 16px;
+}
+.row p:nth-child(2){
+    flex: 0.5;
+}
+
+.algebra-container{
+    margin-bottom: 40px;
+}
+.currency-container{
+    margin-bottom: 40px;
+}
+.currency-row{
+    display: flex;
+    width: 20%;
+}
+.currency-row p:nth-child(1){
+    flex: 0.6;
+}
+.c-container h1{
+    margin-bottom: 0;
+}
+
+pre{
+    line-height: 2;
+    font-size: 18px;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Registration Form</h1>
+    <form id="registrationForm">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" placeholder="Enter First Name" maxlength="10" required>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" placeholder="Enter Last Name" maxlength="10" required>
+
+        <label for="username">User Name</label>
+        <input type="text" id="username" placeholder="Enter User Name" minlength="8" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter Password" required>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+        <label for="birthday">Birthday</label>
+        <input type="date" id="birthday" required>
+
+        <label for="country">Country</label>
+        <select id="country" required>
+            <option value="">Select Your Country</option>
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="IN">India</option>
+            <option value="CA">Canada</option>
+        </select>
+
+        <label>Gender</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+        </div>
+
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" placeholder="Enter Phone Number" maxlength="10" required>
+
+        <label for="altEmail">Alternative Email</label>
+        <input type="email" id="altEmail" placeholder="Enter Alternative Email" required>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the terms of service and privacy policy</label>
+        </div>
+
+        <button type="submit">Submit</button>
+        <p class="error" id="errorMessage"></p>
+    </form>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent form from submitting
+
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmPassword').value.trim();
+            const birthday = document.getElementById('birthday').value;
+            const country = document.getElementById('country').value;
+            const phone = document.getElementById('phone').value.trim();
+            const altEmail = document.getElementById('altEmail').value.trim();
+            const terms = document.getElementById('terms').checked;
+
+            const genderMale = document.getElementById('male').checked;
+            const genderFemale = document.getElementById('female').checked;
+
+            // Validate password
+            const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+            if (!passwordRegex.test(password)) {
+                errorMessage.textContent = "Password must be 6-20 characters, include at least one numeric digit, one uppercase, and one lowercase letter.";
+                return;
+            }
+
+            // Confirm password match
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match.";
+                return;
+            }
+
+            // Validate phone number
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                errorMessage.textContent = "Phone number must be 10 digits with no spaces or punctuation.";
+                return;
+            }
+
+            // Validate gender selection
+            if (!genderMale && !genderFemale) {
+                errorMessage.textContent = "Please select your gender.";
+                return;
+            }
+
+            // Validate all fields are filled
+            if (!firstName || !lastName || !username || !birthday || !country || !altEmail || !terms) {
+                errorMessage.textContent = "Please fill in all required fields.";
+                return;
+            }
+
+            // If all validations pass
+            alert(`Welcome, ${firstName} ${lastName}! Your registration is complete.`);
+            form.reset(); // Clear the form
+            errorMessage.textContent = ""; // Clear error message
+        });
+    </script>
+</body>
+</html>

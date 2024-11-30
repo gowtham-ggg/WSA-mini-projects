@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of triangle</title>
+</head>
+<body>
+    <h2>The Area of Triangle</h2>
+    <p id="para"></p>
+    <script>
+        const para= document.getElementById("para");
+        function areaOfTriangle(s1, s2, s3){
+            s1 = parseFloat(s1);
+            s2 = parseFloat(s2);
+            s3 = parseFloat(s3);
+
+            let s = (s1 + s2 + s3) / 2;
+            let area = Math.sqrt(s*(s-s1) * (s-s2) * (s-s3)).toFixed(2);
+
+            para.innerText = `The Area of Triangle : ${area}`;
+        }
+        let s1 = prompt("S1");
+        let s2 = prompt("S2");
+        let s3 = prompt("S3");
+        areaOfTriangle(s1,s2,s3);
+    </script>
+</body>
+</html>

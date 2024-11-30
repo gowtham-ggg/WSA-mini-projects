@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212; /* Dark background */
+  color: #e6e6e6; /* Light text color */
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #61dafb;
+}
+
+a:hover {
+  color: #ff8c00;
+}
+
+/* Movie Form Styles */
+.movie-form {
+  background-color: #1e1e1e; /* Dark background for form */
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.movie-form h1 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.movie-form input,
+.movie-form select,
+.movie-form button {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.movie-form input {
+  background-color: #333;
+  color: #fff;
+}
+
+.movie-form select {
+  background-color: #333;
+  color: #fff;
+}
+
+.movie-form button {
+  background-color: #ff8c00; /* Orange button */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.movie-form button:hover {
+  background-color: #ff6000; /* Darker orange on hover */
+}
+
+/* Movie List Styles */
+.movie-list ul {
+  list-style-type: none;
+  padding: 0;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.movie-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #2a2a2a;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.movie-list li:hover {
+  background-color: #444;
+}
+
+.movie-list button {
+  background-color: #ff5959; /* Red button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  width: 100px;
+  transition: background-color 0.3s;
+}
+
+.movie-list button:hover {
+  background-color: #ff3d3d;
+}
+
+/* Star Rating Styles */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px; /* Reduced gap between stars */
+}
+
+.star-rating span {
+  font-size: 20px; /* Larger star size */
+  color: #ff8c00; /* Gold color for stars */
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; /* Smooth zoom and color effect */
+}
+
+.star-rating span:hover {
+  transform: scale(1.2); /* Slightly enlarge on hover for interactivity */
+  color: #ffc107; /* Lighter color on hover */
+}
+
+.active {
+  color: #ff8c00; /* Maintain gold color for active stars */
+}
+
+/* Average Rating Styles */
+.average-rating {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff8c00; /* Orange color for average rating */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .movie-form {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .movie-form h1 {
+    font-size: 24px;
+  }
+
+  .movie-list li {
+   width: 90%;
+  }
+  .movie-list ul{
+    width: 100%;
+  }
+
+  .movie-form input,
+  .movie-form select,
+  .movie-form button {
+    width: 90%;
+  }
+
+  .star-rating span {
+    font-size: 18px; /* Slightly smaller stars for smaller screens */
+  }
+}
