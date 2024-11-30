@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { evaluate } from 'mathjs';  // Import the evaluate function from math.js
 import Button from './Button';
 import Display from './Display';
 
@@ -14,7 +15,7 @@ const Calculator = () => {
       setInput((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"));
     } else if (value === "=") {
       try {
-        setResult(eval(input).toString());
+        setResult(evaluate(input).toString()); // Use math.js to safely evaluate the expression
       } catch {
         setResult("Error");
       }
