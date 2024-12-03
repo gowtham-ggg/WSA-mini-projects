@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Link Attributes</title>
+</head>
+<body>
+    <!-- Link to inspect -->
+    <a 
+        id="exampleLink" 
+        href="https://www.instagram.com" 
+        hreflang="en" 
+        rel="nofollow" 
+        target="_blank" 
+        type="text/html">
+        Instagram Link
+    </a>
+
+    <!-- Button to trigger the function -->
+    <button id="getAttributes">Get Link Attributes</button>
+
+    <!-- Output area -->
+    <div id="output" style="margin-top: 20px; font-family: Arial, sans-serif;"></div>
+
+    <script>
+        // Function to get and display the link attributes
+        function getLinkAttributes() {
+            const link = document.getElementById('exampleLink');
+            const outputDiv = document.getElementById('output');
+
+            // Retrieve link attributes
+            const attributes = {
+                href: link.getAttribute('href'),
+                hreflang: link.getAttribute('hreflang'),
+                rel: link.getAttribute('rel'),
+                target: link.getAttribute('target'),
+                type: link.getAttribute('type'),
+            };
+
+            // Display the attributes in the output div
+            outputDiv.innerHTML = `
+                <p><strong>href:</strong> ${attributes.href}</p>
+                <p><strong>hreflang:</strong> ${attributes.hreflang}</p>
+                <p><strong>rel:</strong> ${attributes.rel}</p>
+                <p><strong>target:</strong> ${attributes.target}</p>
+                <p><strong>type:</strong> ${attributes.type}</p>
+            `;
+        }
+
+        // Attach event listener to the button
+        document.getElementById('getAttributes').addEventListener('click', getLinkAttributes);
+    </script>
+</body>
+</html>

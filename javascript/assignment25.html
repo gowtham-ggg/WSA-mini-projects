@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Min(ai, bi)</title>
+</head>
+<body>
+    <script>
+
+        function maxMinPairSum(n, arr) {
+            if (arr.length !== 2 * n) {
+                return "Invalid input: Array must have exactly 2n elements.";
+            }
+
+            arr.sort((a, b) => a - b);
+
+            let sum = 0;
+            for (let i = 0; i < arr.length; i += 2) {
+                sum += arr[i]; 
+            }
+
+            return `Sum of min(ai, bi): ${sum}`;
+        }
+
+        const test1 = maxMinPairSum(4, [3, 5, 6, 2, 8, 1, 4, 1]); // n = 4
+        const test2 = maxMinPairSum(5, [10, 22, 32, 12, 10, 34, 7, 23, 45, 50]); // n = 5
+
+        document.write(test1 + "<br>");
+        document.write(test2);
+    </script>
+</body>
+</html>
