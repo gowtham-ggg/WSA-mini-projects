@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function robotMakesCircle(moves){
+            let x= 0;
+            let y= 0;
+
+            for(let move of moves){
+                switch(move){
+                    case "R" : x++;
+                    break;
+                    case "L" : x--;
+                    break;
+                    case "U" : y++;
+                    break;
+                    case "D" : y--;
+                    break;
+                }
+            }
+            return x === 0  && y === 0;
+        }
+
+        console.log(robotMakesCircle("UD"));
+        console.log(robotMakesCircle("LL"));
+        console.log(robotMakesCircle("LRRL"));
+        console.log(robotMakesCircle("LLUD"));
+    </script>
+</body>
+</html>
