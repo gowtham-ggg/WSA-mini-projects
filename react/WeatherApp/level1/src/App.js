@@ -139,12 +139,70 @@ function App() {
       }
       return obj;
     }
+    const dailyData = convertTimeToObjectArray(daily.time, {
+      weatherCode : daily.weatherCode,
+      temperature2mMax : daily.temperature2mMax,
+      temperature2mMin: daily.temperature2mMin,
+      apparentTemperatureMax : daily.apparentTemperatureMax,
+      apparentTemperatureMin : daily.apparentTemperatureMin,
+      sunrise : daily.sunrise,
+      sunset : daily.sunset,
+      uvIndexMax : daily.uvIndexMax,
+      precipitationSum : daily.precipitationSum,
+      windSpeed10mMax : daily.windSpeed10mMax,
+      windDirection10mDominant : daily.windDirection10mDominant,
+
+    });
+    const hourlyFormatted = convertTimeToObjectArray(hourly.time, {
+      temperature2m : hourly.temperature2m,
+      visibility: hourly.visibility,
+      windDirection10m : hourly.windDirection10m,
+      apparentTemperature : hourly.apparentTemperature,
+      precipitationSum : hourly.precipitationProbability,
+      humidity : hourly.humidity,
+      weatherCode : hourly.weatherCode,
+    });
+    const hourlyData = filterAndFalgClosestTime(hourlyFormatted);
+    return {
+      dailyData,
+      hourlyData,
+    };
+  }
+  const clickHandler = (searchItem)=>{
+    setDataLoading(true);
+    setForecastLocation({
+      label : searchItem.label,
+      lat : searchItem.lat,
+      lng : searchItem.lng,
+    });
+    fetchWeather(searchItem.lat, searchItem.lng, true)
   }
   return (
     <div className="app">
       <Header/>
-      <DefaultScreen/>
-      <SearchResult/>
+      {!dataLoading && !showResultScreen && (
+  <DefaultScreen 
+    clickHandler={clickHandler} 
+    currentWeatherData={
+      hourlyForecastData?.length 
+        ? hourlyForecastData.filter((hour) => hour.isClosestTime) 
+        : []
+    } 
+    forecastLocation = {forecastLocation}
+  />
+)}
+
+      {showResultScreen && !dataLoading && (
+        <SearchResult 
+        currentWeatherData={
+          hourlyForecastData?.length 
+            ? hourlyForecastData.filter((hour) => hour.isClosestTime) 
+            : []
+        }    
+        forecastLocation={forecastLocation}    
+        dailyForecast = {dailyForecast}  
+        />
+      )}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CardLayout from './UI/CardLayout';
 import sun from "../assets/images/sun.svg";
 import temperature from "../assets/images/temperature.svg";
@@ -8,30 +8,55 @@ import windy from "../assets/images/windy.svg"
 import water from "../assets/images/water.svg"
 import cloud from "../assets/images/cloud.svg"
 import search from "../assets/images/search.svg"
+import { weatherCodesMapping } from './util';
 
-const DefaultScreen = () => {
-  const currenWeatherData = {
-    date: "2024-12-10",
-    values: {
-      temperature: 24.5,
-      weatherConditions: "clearSky",
-      Visibility: 10000,
-      apparentTemperature: 26,
-      humidity: 65,
-      windspeed: 12,
-    },
+const DefaultScreen = (props) => {
+  const [searchCity, setSearchCity] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  const fetchSuggestions = (label)=>{
+    fetch(
+      `https://nominatim.openstreetmap.org/search?q=${label}&format=json&addressdetails=1`
+      ).then((response) => response.json()).then((suggestionFetched)=>{
+        const tempSuggestions = [];
+        suggestionFetched?.length && suggestionFetched.forEach((suggestedItem)=>{
+          tempSuggestions.push({
+            label : `${
+              suggestedItem?.address?.village??
+              suggestedItem?.address?.suburb??
+              suggestedItem?.address?.town??
+              suggestedItem?.address?.city
+
+            }, 
+            ${suggestedItem?.address?.state},
+            ${suggestedItem?.address?.country}
+            `,
+            lat: suggestedItem.lat,
+            lng : suggestedItem.lng,
+          });
+        });
+        setSuggestions(tempSuggestions);
+      })
   };
 
+  useEffect(()=>{
+    const timeOut = setTimeout(()=>{
+      fetchSuggestions(setSearchCity);
+    },300);
+    return () =>clearTimeout(timeOut);
+  }, [searchCity]);
   return (
     <div className="home-main-div">
       <div className="default-home-container">
         {/* Weather Card */}
         <CardLayout>
-          <div className="default-card-city">
-            <img src={sun} alt="sun" />
+          {props?.currenWeatherData?.length>0 && props.currenWeatherData[0] &&(
+            <>
+    <div className="default-card-city">
+            <img src={weatherCodesMapping[props.currenWeatherData[0]?.values?.weatherCode].img} alt="weather icon" />
             <div>
-              <p className="city-name">New Delhi</p>
-              <p className="date-today">Tue 10/12/2024</p>
+              <p className="city-name">{props.forecastLocation?.label}</p>
+              <p className="date-today">today</p>
             </div>
           </div>
 
@@ -39,10 +64,10 @@ const DefaultScreen = () => {
             <img src={temperature} alt="thermo" className="thermometer-img" />
             <div>
               <p style={{ fontSize: "144px" }}>
-                {Math.round(currenWeatherData.values.temperature)}
+              {parseFloat(props.currenWeatherData[0].values?.temperature2m.toFixed(0))}
               </p>
               <p className="text-capitalize">
-                {currenWeatherData.values.weatherConditions}
+                {props.currenWeatherData[0].values?.weatherCondition}
               </p>
             </div>
             <p
@@ -70,7 +95,7 @@ const DefaultScreen = () => {
                 <img src={eye} alt="visibility" />
                 <p className="weather-params-label">Visibility</p>
               </div>
-              <p>{Math.floor(currenWeatherData.values.Visibility / 1000)} km</p>
+              <p>{Math.floor(props.currenWeatherData[0].values?.visibility / 1000)} km</p>
             </div>
             <p>|</p>
             <div className="weather-info-subtile">
@@ -78,7 +103,7 @@ const DefaultScreen = () => {
                 <img src={thermometer} alt="feels like" />
                 <p className="weather-params-label">Feels Like</p>
               </div>
-              <p>{Math.floor(currenWeatherData.values.apparentTemperature)}&deg;C</p>
+              <p>{Math.floor(props.currenWeatherData[0].values?.apparentTemperature)}&deg;C</p>
             </div>
           </div>
 
@@ -96,7 +121,7 @@ const DefaultScreen = () => {
                 <img src={water} alt="humidity" />
                 <p className="weather-params-label">Humidity</p>
               </div>
-              <p>{currenWeatherData.values.humidity}%</p>
+              <p>{props.currenWeatherData[0].values?.humidity}%</p>
             </div>
             <p>|</p>
             <div className="weather-info-subtile">
@@ -104,9 +129,12 @@ const DefaultScreen = () => {
                 <img src={windy} alt="wind speed" />
                 <p className="weather-params-label">Wind Speed</p>
               </div>
-              <p>{Math.floor(currenWeatherData.values.windspeed)} km/hr</p>
+              <p>{props.currenWeatherData[0].values?.windSpeed} km/hr</p>
             </div>
           </div>
+            </>
+          )}
+      
         </CardLayout>
 
         {/* Search Card */}
