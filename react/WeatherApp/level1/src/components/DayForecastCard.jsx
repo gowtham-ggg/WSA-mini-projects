@@ -1,26 +1,24 @@
-import React from 'react'
-import CardLayout from './UI/CardLayout'
-import weatherIcon from "../assets/images/sun.svg"
-const DayForecastCard = () => {
-    const weatherData = {
-        day : "Thursday",
-        date : "Dec 12",
-        weatherIcon : {weatherIcon},
-        weatherCondtion : "clearSky",
-        tempMini : 19,
-        tempMax : 25
-    }
-  return (
-   <CardLayout>
-    <div className="day-forecast-container">
-        <p className='label-18'>{weatherData.day}</p>
-        <p className='text-blue'>{weatherData.date}</p>
-        <img src={weatherIcon} alt="" />
-        <p className='label-18'>{weatherData.weatherCondtion}</p>
-        <p className='temp-range'>{weatherData.tempMini}&deg;C-{weatherData.tempMax}&deg;C</p>
-    </div>
-   </CardLayout>
-  )
-}
+import React from "react";
+import CardLayout from "./UI/CardLayout";
+import Sun from "../assets/images/sun.svg";
+import moment from "moment";
+import { weatherCodesMapping } from "./util";
 
-export default DayForecastCard
+const DayForecastCard = ({data, date}) => {
+  
+  return (
+    <CardLayout>
+      <div className="day-forecast-container">
+        <p className="label-18">{moment(date).format("dddd")}</p>
+        <p className="text-blue">{moment(date).format("MMM DD")}</p>
+        <img src={weatherCodesMapping[data.weatherCode].img} />
+        <p className="label-18">{data.weatherCondition}</p>
+        <p className="temp-range">
+          {Math.floor(data.temperature2mMin)} - {Math.floor(data.temperature2mMax)} &deg;C
+        </p>
+      </div>
+    </CardLayout>
+  );
+};
+
+export default DayForecastCard;

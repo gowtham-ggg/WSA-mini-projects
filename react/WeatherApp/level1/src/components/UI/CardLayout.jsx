@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const CardLayout = ({children}) => {
-  return (
-    <div className='card-container'>
-      {children}
-    </div>
-  )
-}
+const CardLayout = ({ children }) => {
+  return <div className="card-container">{children}</div>;
+};
 
-export default CardLayout
+export default CardLayout;
