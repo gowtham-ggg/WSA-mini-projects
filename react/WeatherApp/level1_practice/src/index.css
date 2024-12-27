@@ -1,0 +1,101 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(180deg, #4a00e0, #8e2de2, #a8c0ff);
+}
+
+
+.default-home-container {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.default-card-city {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.city-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.date-today {
+  font-size: 16px;
+  color: #555;
+}
+
+.temp-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.thermometer-img {
+  width: 50px;
+  height: 50px;
+}
+
+.temperature-value {
+  font-size: 144px;
+  margin: 0;
+}
+
+.weather-conditions {
+  font-size: 18px;
+  color: #666;
+}
+
+.temperature-unit {
+  font-size: 24px;
+  align-self: flex-start;
+  padding-top: 10px;
+}
+
+.weather-info-row {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 16px;
+}
+
+.weather-info-subtile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-params-label {
+  font-size: 14px;
+  color: #888;
+}
+
+.separator {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.search-card {
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.city-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
