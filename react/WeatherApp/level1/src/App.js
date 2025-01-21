@@ -78,6 +78,7 @@ function App() {
         visibility: hourly.variables(5).valuesArray(),
         windSpeed10m: hourly.variables(6).valuesArray(),
         windDirection10m: hourly.variables(7).valuesArray(),
+        humidity : hourly.variables(6).valuesArray()
       },
       daily: {
         time: range(
@@ -96,6 +97,7 @@ function App() {
         precipitationSum: daily.variables(8).valuesArray(),
         windSpeed10mMax: daily.variables(9).valuesArray(),
         windDirection10mDominant: daily.variables(10).valuesArray(),
+        humidity : daily.variables(6).valuesArray()
       },
     };
 
