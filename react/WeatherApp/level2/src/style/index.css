@@ -3,11 +3,19 @@
 body {
   box-sizing: border-box;
   font-family: "Poppins";
-  
+  caret-color: transparent;
 }
 
 p {
   margin: 0px;
+}
+
+.p-0 {
+  padding: 0px !important;
+}
+
+.font-30 {
+  font-size: 30px;
 }
 
 .flex {
@@ -19,6 +27,10 @@ p {
   align-items: center;
 }
 
+.items-start {
+  align-items: start;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -27,17 +39,23 @@ p {
   justify-content: center;
 }
 
-.text-capitalize{
+.capitalize {
   text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.border-0 {
+  border: 0px !important;
 }
 
 .app {
   background: url(../assets/images/background.png);
+  background-size: cover;
   height: auto;
   min-height: 100vh;
-  background-size: cover;
-  /* width: fit-content; */
-  min-width: 100%;
 }
 
 .header {
@@ -55,12 +73,12 @@ p {
   font-size: 40px;
 }
 
-.header-blue{
-  color: #6B66D8;
+.header-blue {
+  color: #6b66d8;
 }
 
 .card-container {
-  border-radius: 48px;
+  border-radius: 30px;
   padding: 22px 46px;
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
@@ -74,7 +92,7 @@ p {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  /* overflow-y: scroll; */
+  box-sizing: border-box;
   padding: 12px 0px;
 }
 
@@ -97,6 +115,7 @@ p {
   font-family: "Poppins";
   font-weight: 600;
   font-size: 24px;
+  max-width: 122px;
 }
 
 .date-today {
@@ -113,7 +132,7 @@ p {
   justify-content: center;
 }
 
-.thermometer-img{
+.thermometer-img {
   margin-bottom: 24px;
   margin-right: 4px;
 }
@@ -151,12 +170,16 @@ p {
   margin-top: 50px;
 }
 
-.city-results{
+.search-card-layout {
+  width: 320px;
+}
+
+.city-results {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
 
-.search-city-suggestions{
+.search-city-suggestions {
   position: relative;
   background-color: rgba(255, 255, 255, 0.28);
   stroke-width: 1px;
@@ -168,12 +191,12 @@ p {
   box-sizing: border-box;
 }
 
-.suggested-label{
+.suggested-label {
   padding: 8px 24px;
   cursor: pointer;
 }
 
-.suggested-label:hover{
+.suggested-label:hover {
   background: rgba(255, 255, 255, 0.23);
 }
 
@@ -205,9 +228,6 @@ p {
 /* Search result screen style */
 .search-result-container-div {
   padding: 64px 53px;
-  /* width: fit-content; */
-  min-width: 100%;
-  box-sizing: border-box;
   /* text-align: center; */
 }
 
@@ -230,38 +250,12 @@ p {
   line-height: normal;
 }
 
-.daily-forecast-section{
-  overflow: auto;
-  padding-bottom: 16px;
-}
-
-.daily-forecast-section::-webkit-scrollbar {
-  width: 4px;
-}
-
-/* Track */
-.daily-forecast-section::-webkit-scrollbar-track {
-  background: transparent; 
-}
- 
-/* Handle */
-.daily-forecast-section::-webkit-scrollbar-thumb {
-  background: #888; 
-  border-radius: 16px;
-}
-
-/* Handle on hover */
-.daily-forecast-section::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-
-.day-forecast-container{
+.day-forecast-container {
   text-align: center;
-  width: 100px;
 }
 
 .label-18 {
-  color: #fff;  
+  color: #fff;
   font-family: "Poppins";
   font-size: 18px;
   font-style: normal;
@@ -269,8 +263,100 @@ p {
   line-height: normal;
 }
 
-.temp-range{
-  white-space: nowrap;
+.hourly-forecast-container {
+  width: 100%;
+}
+
+.hourly-forecast-card-layout {
+  width: 100%;
+  overflow: auto;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+}
+
+.hourly-forecast-card-layout::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.hourly-card-main-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.hourly-title-container {
+  position: relative;
+}
+
+.hourly-navigation-arrow {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+#right-nav-btn {
+  margin-left: 16px;
+}
+
+.hour-comp-main-div {
+  text-align: center;
+  padding: 12px 24px;
+  flex-grow: 1;
+}
+
+.time-highlight {
+  border-radius: 30px;
+  background: rgba(28, 4, 68, 0.2);
+}
+
+.current-time-metrix {
+  width: 65%;
+  margin-top: 60px;
+}
+
+.unit-metrix-container {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.unit-metrix-main-div {
+  flex-grow: 1;
+  border-radius: 20px;
+  column-gap: 6px;
+  padding: 24px;
+  width: 45%;
+}
+
+.unit-metrix-card-layout {
+  padding: 24px;
+}
+
+.seven-day-forecast-card-layout {
+  width: 35%;
+  margin-top: 60px;
+}
+
+.single-day {
+  border-bottom: 1px solid #7670e9;
+  padding: 6px 0px;
+}
+
+.temp-graph-card-layout {
+  margin-top: 50px;
+}
+
+.time-format-text {
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 4px;
 }
 
 .copyright-text {
