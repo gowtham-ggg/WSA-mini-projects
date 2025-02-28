@@ -213,6 +213,7 @@ p {
   position: absolute;
   left: 60px;
   height: 100%;
+  caret-color: white;
 }
 
 .city-input {
